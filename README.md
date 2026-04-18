@@ -37,6 +37,19 @@ Com base nos dados obtidos, selecione uma prática ou dado de teste relevante e 
 
 ## Respostas
 
-**1. Repositório selecionado:** `<URL_DO_REPOSITÓRIO_AQUI>`
+**1. Repositório selecionado:** https://github.com/nvbn/thefuck.git
 
-**2. Explicação:** `<SUA_EXPLICAÇÃO_AQUI>`
+**2. Explicação:** 
+    A ferramenta "thefuck" conserta comandos errados digitados no terminal, quando o usuário digita "fuck" logo em seguida de um erro:
+
+![Exemplo](example.gif)
+
+Ao observar as estatísticas de testes no TestMiner, foi possível observar que, grande parte dos arquivos de testes do repositório serviam para testar exclusivamente correções de comandos do sistema de controle de versão Git:
+
+![GitTests](gittests.png)
+
+Esse foco no git ocorre, porque, além de ser um sistema muito usado, seus comandos possuem especificidades que podem ser frustrantes para muitos desenvolvedores. Como as mensagens de erro do git são bem detalhadas (com explicações sobre Missing Upstream, divergências de branch, nomes trocados ou sugestões), o thefuck aproveitou para garantir que a maior parte dos comandos git fosse automaticamente corrigida e extremamente bem testada, uma vez que a maior parte dos usuários estaria instalando a ferramenta justamente pra corrigir seus comandos git:
+
+![GitTests2](gittests2.png)
+
+Além disso, foi possível observar que, grande parte de seus testes são feitos com a união do framework pytest, e com o uso de mocks.
